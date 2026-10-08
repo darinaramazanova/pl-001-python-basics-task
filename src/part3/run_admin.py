@@ -82,7 +82,6 @@ def print_result(result: object) -> None:
         print(result)
 
 
-
 def run_command(storage: list[Product], line: str) -> bool:
     """Parse one console line and carry out the command it names.
 

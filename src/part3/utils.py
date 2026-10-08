@@ -100,12 +100,14 @@ def get_storage_str_representation(storage: list[Product]) -> str:
     # TODO: реализуйте функцию
     rows_data = []
     for product in storage:
-        rows_data.append((
-            str(product[PRODUCT_ID_INDEX]),
-            str(product[NAME_INDEX]),
-            str(product[PRICE_INDEX]),
-            str(product[QUANTITY_INDEX])
-        ))
+        rows_data.append(
+            (
+                str(product[PRODUCT_ID_INDEX]),
+                str(product[NAME_INDEX]),
+                str(product[PRICE_INDEX]),
+                str(product[QUANTITY_INDEX]),
+            )
+        )
     widths = [len(header) for header in TABLE_HEADERS]
     for row in rows_data:
         for i, cell in enumerate(row):
@@ -118,5 +120,5 @@ def get_storage_str_representation(storage: list[Product]) -> str:
     for row in rows_data:
         cells = [f"{cell:<{widths[i]}}" for i, cell in enumerate(row)]
         data_lines.append("| " + " | ".join(cells) + " |")
-    result_lines = [header_line, separator_line] + data_lines  
+    result_lines = [header_line, separator_line] + data_lines
     return "\n".join(result_lines)

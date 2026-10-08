@@ -96,7 +96,7 @@ def read_product(storage: list[Product], product_id: int) -> Product | None:
         printed in that case).
     """
     # TODO: реализуйте функцию (используйте своё решение части 2)
-    for product in  storage:
+    for product in storage:
         if product[PRODUCT_ID_INDEX] == product_id:
             return product
     print(f"no product with id {product_id}")
@@ -144,8 +144,7 @@ def update_product(
         print(f"no product with id {product_id}")
         return None
     for product in storage:
-        if (product[NAME_INDEX] == name
-            and product[PRODUCT_ID_INDEX] != product_id):
+        if product[NAME_INDEX] == name and product[PRODUCT_ID_INDEX] != product_id:
             print(f"product name '{name}' is already taken")
             return None
     price = normalize_price(price)
