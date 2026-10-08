@@ -136,8 +136,8 @@ def run_command(storage: list[Product], line: str) -> bool:
         name = " ".join(parts[2:-2])
         price = Decimal(parts[-2])
         quantity = int(parts[-1])
-        result = update_product(storage, product_id, (name, price, quantity))
-        print_result(result)
+        updated = update_product(storage, product_id, (name, price, quantity))
+        print_result(updated)
     else:
         print(f"'{line}' is not a command")
 
